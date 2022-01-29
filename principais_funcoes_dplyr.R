@@ -28,3 +28,9 @@ starwars %>%
   mutate(peso_kg = height/100, 
          IMC = mass/peso_kg^2) %>%
   select(name, IMC)
+
+## filter(): escolhe casos de variáveis com base em seus valores
+
+starwars %>%
+  filter(species == 'Human') %>%
+  select(name, height, mass)
