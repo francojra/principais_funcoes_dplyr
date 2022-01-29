@@ -15,10 +15,16 @@ library(dplyr)
 
 # Funções ----------------------------------------------------------------------------------------------------------------------------------
 
-## select(): escolhe variáveis com base em seus nomes
+## select(): escolhe variáveis com base em seus nomes.
 
 dplyr::starwars # Baixar dados
 
 starwars %>%
   select(name, height, mass)
 
+## mutate(): adiciona novas variáveis que são funções de variáveis existentes.
+
+starwars %>%
+  mutate(peso_kg = height/100, 
+         IMC = mass/peso_kg^2) %>%
+  select(name, IMC)
