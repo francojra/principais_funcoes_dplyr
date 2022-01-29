@@ -48,3 +48,8 @@ starwars %>%
   filter(species == "Human") %>%
   summarise(mean(height, na.rm = TRUE))
 
+## group_by(): agrupa as variáveis segundo alguma categoria.
+
+starwars %>%
+  group_by(species) %>%
+  summarise(mean(height, na.rm = T))
