@@ -29,8 +29,22 @@ starwars %>%
          IMC = mass/peso_kg^2) %>%
   select(name, IMC)
 
-## filter(): escolhe casos de variáveis com base em seus valores
+## filter(): escolhe casos de variáveis com base em seus valores.
 
 starwars %>%
   filter(species == 'Human') %>%
   select(name, height, mass)
+
+## arrange(): altera a ordem das linhas.
+
+starwars %>%
+  filter(species == "Human") %>%
+  arrange(height) %>%
+  select(name, height, mass)
+
+## summarise(): reduz vários valores a um único resumo.
+
+starwars %>%
+  filter(species == "Human") %>%
+  summarise(mean(height, na.rm = TRUE))
+
